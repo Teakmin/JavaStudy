@@ -1,0 +1,38 @@
+package pizza.service.Impl;
+
+import pizza.parent.Pizza;
+import pizza.service.PizzaService;
+
+public class PizzaServiceImpl implements PizzaService{
+	
+	static final public PizzaServiceImpl service = new PizzaServiceImpl();
+	private PizzaServiceImpl() {};
+	public static PizzaServiceImpl getInstance() {
+		return service;
+	}
+	
+	@Override
+	public void makePizza(Pizza pizza) {
+		//피자 만드는 순서대로 method를 실행
+		pizza.dough();
+		pizza.topping();     //불완전하게 
+		pizza.bake();                   
+		pizza.cutting();
+		pizza.boxing();  
+	}
+
+	@Override
+	public void allMakePizza(Pizza[] pizzas) {
+		// pizza의 배열을 받아와서 각 피자에 makePizza를 실행
+		for (Pizza p : pizzas) {
+//			 // pizza 정보 출력(toString)
+			System.out.println(p);
+//			 // pizza 만드는 과정 출력
+			makePizza(p);
+			System.out.println("=================");
+		}
+		
+	}
+}
+		
+
