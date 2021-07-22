@@ -15,7 +15,7 @@ public class PizzaServiceImpl implements PizzaService{
 	public void makePizza(Pizza pizza) {
 		//피자 만드는 순서대로 method를 실행
 		pizza.dough();
-		pizza.topping();     //불완전하게 
+		pizza.topping();     //불완전하게 되어있는데 완전하게 해야지
 		pizza.bake();                   
 		pizza.cutting();
 		pizza.boxing();  
